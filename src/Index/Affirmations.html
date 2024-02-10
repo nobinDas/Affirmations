@@ -2,9 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affirmations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff6f61; /* Reddish peach color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff4d43; /* Darker shade on hover */
+        }
+    </style>
 </head>
 <body>
+
+    <div class="container">
+        <h1>Daily Affirmations</h1>
+        <p id="affirmation">Click the button below to see your affirmation for today.</p>
+        <button onclick="generateAffirmation()">Get Affirmation</button>
+    </div>
+
+    <script>
+        // Array of affirmations
+        const affirmations = [
+            "I am worthy of love and respect.",
+            "I am confident and capable of achieving my goals.",
+            "I am surrounded by positivity and abundance.",
+            "I am grateful for all the blessings in my life.",
+            "I am in control of my thoughts and emotions.",
+            "I am deserving of success and happiness.",
+            "I am enough just as I am.",
+            "I am capable of overcoming any obstacle.",
+            "I am filled with energy, vitality, and enthusiasm.",
+            "I am creating a life filled with joy and purpose."
+        ];
+
+        // Function to generate a random affirmation
+        function generateAffirmation() {
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            const affirmation = affirmations[randomIndex];
+            document.getElementById("affirmation").textContent = affirmation;
+        }
+    </script>
 
 </body>
 </html>
