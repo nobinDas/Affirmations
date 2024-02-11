@@ -2,12 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: Optima, sans-serif;
     scroll-behavior: smooth;
   }
   
   .navbar {
-    background: #83afa5;
+    background: #f45723;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -30,8 +30,8 @@
   }
   
   #navbar__logo {
-    background-color: #e69089;
-    background-image: linear-gradient(to top, #e69089 0%, #e69089 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -55,7 +55,7 @@
   }
   
   .navbar__links {
-    color: #fff;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,7 +87,7 @@
     background: #833ab4;
     background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-    color: #fff;
+    color: #ffffff;
     transition: all 0.3s ease;
   }
   
@@ -120,7 +120,7 @@
     }
   
     .navbar__menu.active {
-      background: #131313;
+      background: #000000;
       top: 100%;
       opacity: 1;
       transition: all 0.5s ease;
@@ -133,7 +133,7 @@
       padding-left: 25px;
     }
   
-    .navbar__toggle .bar {
+    .navbar__toggle.bar {
       width: 25px;
       height: 3px;
       margin: 5px auto;
@@ -193,7 +193,7 @@
   /* Hero Section */
   .hero {
     background: #000000;
-    background: linear-gradient(to right, #161616, #000000);
+    background: linear-gradient(to right, #171717, #000000);
     padding: 200px 0;
   }
   
@@ -236,16 +236,16 @@
   
   .hero__description {
     font-size: 60px;
-    background: #da22ff; /* fallback for old browsers */
+    background: #000000; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
-      #9114ff,
-      #da22ff
+      #FFB569,
+      #FFCC99
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
       to right,
-      #8f0eff,
-      #da22ff
+      #FFB569,
+      #FFCC99
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: 100%;
     -webkit-background-clip: text;
@@ -270,7 +270,7 @@
   
   /* About Section */
   .main {
-    background-color: #131313;
+    background-color: #070707;
     padding: 10rem 0;
   }
   
@@ -288,7 +288,7 @@
   }
   
   .main__content {
-    color: #fff;
+    color: #ffffff;
     width: 100%;
   }
   
@@ -469,17 +469,6 @@
       padding: 12px 36px;
       margin: 2.5rem 0;
     }
-  }
-  
-  /* Services Section */
-  .services {
-    background: #131313;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 10rem 0;
   }
   
   .services h1 {

@@ -1,88 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affirmations</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        p {
-            text-align: center;
-            font-size: 18px;
-            color: #555;
-            line-height: 1.6;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #ff6f61; /* Reddish peach color */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ff4d43; /* Darker shade on hover */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affirmation Generator</title>
+<style>
+  body {
+    font-family: Optima, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .affirmation {
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #777;
+  }
+</style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Daily Affirmations</h1>
-    <p id="affirmation">Click the button below to see your affirmation for today.</p>
-    <button onclick="generateAffirmation()">Get Affirmation</button>
+  <h1>Affirmation Generator</h1>
+  <label for="goal">Enter Your Goal:</label>
+  <input type="text" id="goal" placeholder="Enter your goal here...">
+  <button onclick="generateAffirmation()">Generate Affirmation</button>
+</div>
+
+<div class="affirmation" id="affirmation">
+  <!-- Affirmation will appear here -->
 </div>
 
 <script>
-    // Array of affirmations
+  function generateAffirmation() {
+    const goal = document.getElementById('goal').value.trim();
+    if (goal === '') {
+      alert('Please enter your goal first.');
+      return;
+    }
+
     const affirmations = [
-        "I am worthy of love and respect.",
-        "I am confident and capable of achieving my goals.",
-        "I am surrounded by positivity and abundance.",
-        "I am grateful for all the blessings in my life.",
-        "I am in control of my thoughts and emotions.",
-        "I am deserving of success and happiness.",
-        "I am enough just as I am.",
-        "I am capable of overcoming any obstacle.",
-        "I am filled with energy, vitality, and enthusiasm.",
-        "I am creating a life filled with joy and purpose.",
-        "I set clear intentions and take consistent action towards my dreams.",
-        "I embrace challenges as opportunities to learn and grow stronger.",
-        "I visualize my success and believe in my ability to make it a reality.",
-        "I am laser-focused on my goals and prioritize my time and energy accordingly.",
-        "I persevere in the face of setbacks and obstacles, knowing that they are temporary roadblocks on my journey to success.",
-        "I celebrate my progress and achievements, no matter how small, and use them as fuel to propel me forward.",
-        "I am disciplined and dedicated to doing whatever it takes to reach my goals.",
-        "I surround myself with positivity and support, drawing inspiration from those who believe in me.",
-        "I am unstoppable in my pursuit of excellence, and I refuse to settle for anything less than my best."
+    "I am capable of achieving anything I set my mind to.",
+    "I am deserving of love, happiness, and success.",
+    "I embrace change and see challenges as opportunities for growth.",
+    "I am confident in my abilities and trust in my intuition.",
+    "I am resilient and can overcome any obstacles in my path.",
+    "I am grateful for all the blessings in my life, big and small.",
+    "I am worthy of respect and treat myself and others with kindness.",
+    "I believe in myself and my potential to create a positive impact.",
+    "I am enough just as I am, and I celebrate my unique qualities.",
+    "I am the architect of my destiny and have the power to shape my future.",
+    "I radiate positivity and attract abundance into my life.",
+    "I release all fear and doubt, and embrace the limitless possibilities ahead.",
+    "I forgive myself for past mistakes and move forward with grace and compassion.",
+    "I am surrounded by love and support from friends, family, and the universe.",
+    "I am at peace with who I am, and I accept myself unconditionally.",
+    "I am open to new experiences and welcome the opportunities they bring.",
+    "I honor my commitments and follow through with my goals and aspirations.",
+    "I am strong, confident, and capable of overcoming any challenge.",
+    "I believe in the power of perseverance and never give up on my dreams.",
+    "I am worthy of success, happiness, and fulfillment in all areas of my life.",
+    "I break my goals down into manageable steps and take action on them every day.",
+    "I trust in my ability to overcome challenges and adapt to changing circumstances.",
+    "I welcome feedback and constructive criticism as opportunities for growth and improvement.",
+    "I stay focused on the present moment, knowing that each step I take brings me closer to my desired outcome.",
+    "I am fully committed to realizing my potential and living a life of purpose and fulfillment."
     ];
 
-    // Function to generate a random affirmation
-    function generateAffirmation() {
-        const randomIndex = Math.floor(Math.random() * affirmations.length);
-        const affirmation = affirmations[randomIndex];
-        document.getElementById("affirmation").textContent = affirmation;
-    }
+    const randomIndex = Math.floor(Math.random() * affirmations.length);
+    const affirmation = `${goal} - ${affirmations[randomIndex]}`;
+    document.getElementById('affirmation').textContent = affirmation;
+  }
 </script>
 
 </body>
